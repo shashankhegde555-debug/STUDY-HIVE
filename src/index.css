@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Light Mode Accent Colors */
+        --accent-violet: #8b5cf6;
+        --accent-pink: #ec4899;
+        --accent-cyan: #06b6d4;
+        --accent-emerald: #10b981;
+        --accent-rose: #f43f5e;
+        --accent-amber: #f59e0b;
+
+        /* Text Colors */
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --text-muted: #9ca3af;
+    }
+
+    body {
+        /* Clean Light Background with subtle gradient */
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+        background-attachment: fixed;
+        @apply text-gray-800 antialiased overflow-x-hidden;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    /* Custom Scrollbar - Light Theme */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+    }
+}
+
+/* Utility Classes */
+@layer utilities {
+    .glass-light {
+        @apply bg-white/70 backdrop-blur-xl border border-white/50;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    }
+
+    .shadow-glass {
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+}
